@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+    font-family: "Poppins", sans-serif
+}
+
+h1 {
+    text-align: center;
+}
+
+.todo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: space-between;
+    width: 58%;
+    margin: auto;
+}
+
+.todo-container input {
+    border: 2px solid;
+    padding: 12px 15px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    outline: none;
+}
+
+.todo-container input:focus {
+    border-color: green;
+}
+
+.todo-container button {
+    background: green;
+    color: white;
+    padding: 13px 35px;
+    font-size: 16px;
+    border: 1px solid green;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+}
+
+.delete {
+    background: red;
+    color: white;
+    padding: 8px 35px;
+    font-size: 16px;
+    border: 1px solid red;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+}
+
+.update {
+    background: #1746b3;
+    color: white;
+    padding: 8px 35px;
+    font-size: 16px;
+    border: 1px solid #1746b3;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0px;
+    width: 57%;
+    margin: 30px auto 0;
+    border: 2px solid;
+    padding: 15px 6px;
+}
+
+.list span {
+    width: 24.333%;
+    text-align: center;
+    position: relative;
+}
+
+.list span::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -20px;
+    height: 100%;
+    width: 2px;
+    background: black;
+}
+
+.btn-button {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
