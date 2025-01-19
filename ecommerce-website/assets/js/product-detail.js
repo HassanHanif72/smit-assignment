@@ -5,7 +5,7 @@ const getProductId = () => {
     return paramId.get("id");
 }
 
-console.log(getProductId());
+// console.log(getProductId());
 
 const fetchProductsDetails = async (id) => {
     try {
@@ -31,7 +31,7 @@ const showProductDetails = (listingProducts) => {
       </div>
       <div class="col-xl-7 col-lg-7 col-md-7">
           <div class="listing-product">
-            <h3 title="${listingProducts.title}">${listingProducts.title.length > 18 ? listingProducts.title.slice(0, 18) + '...' : listingProducts.title}</h3>
+            <h3 title="${listingProducts.title}">${listingProducts.title}</h3>
             <span>$ ${listingProducts.price}</span>
             <p>${listingProducts.description}</p>
             <button class="btn btn-theme" id="add-to-cart" data-id="${listingProducts.id}">Add to Cart</button>
