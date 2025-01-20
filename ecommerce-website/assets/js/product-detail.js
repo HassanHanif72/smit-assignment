@@ -38,17 +38,20 @@ const showProductDetails = (listingProducts) => {
           </div>
       </div>
   `;
-  document.getElementById("add-to-cart").addEventListener("click", () => {
-    addToCart(listingProducts);
-  });
+    document.getElementById("add-to-cart").addEventListener("click", () => {
+        addToCart(listingProducts);
+    });
 }
+
+
 
 const addToCart = (product) => {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart.push(product);
     localStorage.setItem("cart", JSON.stringify(cart));
-    alert(`${product.title} has been added to your cart!`);
-  };
+    // alert(`${product.title} has been added to your cart!`);
+    window.location.href = "cart.html";
+};
 
 const productId = getProductId();
 // console.log(fetchProductsDetails(productId));

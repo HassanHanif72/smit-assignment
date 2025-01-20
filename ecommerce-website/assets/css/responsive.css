@@ -15,6 +15,16 @@
 
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
-
+@media (max-width: 767px) {
+  .cart-detail .cart-info {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  .cart-detail .cart-info>.id,
+  .cart-detail .cart-info>.product-image,
+  .cart-detail .cart-info>.title,
+  .cart-detail .cart-info>.price{
+    width: auto;
+  }
 }
