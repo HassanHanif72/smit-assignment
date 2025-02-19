@@ -43,7 +43,7 @@ btnAdd.addEventListener('click', () => {
         addStudent(studentName, studentEmail, studentNumber);
         getStudent();
     } else {
-        alert("Please Enter Valid Details");
+        alert("Please Enter Name, Email, and Number");
     }
 });
 
@@ -76,12 +76,22 @@ async function getStudent() {
         const fourthLi = document.createElement('li');
         fourthLi.textContent = `Student Number: ${number}`;
         // end
-        // create button
+        // create delete button
         const btnDelete = document.createElement('button');
         btnDelete.textContent = "Delete";
         btnDelete.id = docId;
         btnDelete.classList.add('delete');
+        // end
+
+        // create update button
+        const btnUpdate = document.createElement('button');
+        btnUpdate.textContent = "Update";
+        btnUpdate.id = docId;
+        btnUpdate.classList.add('update');
+        // end
+
         li.appendChild(btnDelete);
+        li.appendChild(btnUpdate);
 
         // end
         ul.appendChild(firstLi);
