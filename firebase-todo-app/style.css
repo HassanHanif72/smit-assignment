@@ -1,0 +1,74 @@
+* {
+    /* padding: 0;
+    margin: 0; */
+}
+
+body {
+    height: 100vh;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    font-family: cursive;
+}
+
+.add-student {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 49%;
+    margin: auto;
+    text-align: center;
+    border: 2px solid black;
+    padding: 28px;
+}
+
+.add-student h1 {
+    margin: 0;
+}
+
+.add-student input {
+    padding: 10px 15px;
+    border: 2px solid;
+    border-radius: 8px;
+    font-family: cursive;
+}
+
+.add-student button {
+    padding: 12px;
+    background: black;
+    color: white;
+    border-radius: 8px;
+    border: 1px solid;
+    font-family: cursive;
+}
+/* ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+li {
+    width: 19.333%;
+} */
+#todo-list ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#todo-list ul li {
+    width: 19.333%;
+}
+
+.delete {
+    background: red;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid red;
+}
