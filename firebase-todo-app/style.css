@@ -91,6 +91,7 @@ li {
     color: white;
     padding: 10px 20px;
     border: 1px solid red;
+    font-family: cursive;
 }
 
 .update {
@@ -98,4 +99,21 @@ li {
     color: white;
     padding: 10px 20px;
     border: 1px solid green;
+    font-family: cursive;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .add-student {
+        width: auto;
+    }
+    #todo-list ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+    #todo-list ul li {
+        width: auto;
+    }
+    #todo-list ul li:after{
+        display: none;
+    }
 }
