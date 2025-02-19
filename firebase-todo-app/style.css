@@ -42,6 +42,7 @@ body {
     border: 1px solid;
     font-family: cursive;
 }
+
 /* ul {
     display: flex;
     list-style: none;
@@ -56,14 +57,33 @@ li {
 #todo-list ul {
     display: flex;
     list-style: none;
-    padding: 0;
     align-items: center;
     justify-content: center;
     text-align: center;
+    border: 1px solid;
+    padding: 12px 0;
 }
 
 #todo-list ul li {
+    gap: 10px;
     width: 19.333%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#todo-list ul li:after {
+    content: "";
+    background: black;
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    top: 0;
+    right: 0;
+}
+
+#todo-list ul li:last-child:after {
+    display: none;
 }
 
 .delete {
@@ -71,4 +91,11 @@ li {
     color: white;
     padding: 10px 20px;
     border: 1px solid red;
+}
+
+.update {
+    background: green;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid green;
 }
