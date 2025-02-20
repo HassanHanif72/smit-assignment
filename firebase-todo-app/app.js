@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyC0SGqXk8-ukswHszedCjcY_7Xh5zF2gUc",
@@ -42,8 +42,10 @@ btnAdd.addEventListener('click', () => {
     if (studentName !== "" && studentEmail !== "" && studentNumber !== "") {
         addStudent(studentName, studentEmail, studentNumber);
         getStudent();
+        emptyFields();
     } else {
         alert("Please Enter Name, Email, and Number");
+        getStudent();
     }
 });
 
@@ -83,7 +85,7 @@ async function getStudent() {
         btnDelete.classList.add('delete');
         // end
 
-        // create update button
+        // create delete button
         const btnUpdate = document.createElement('button');
         btnUpdate.textContent = "Update";
         btnUpdate.id = docId;
@@ -99,18 +101,22 @@ async function getStudent() {
         ul.appendChild(thirdLi);
         ul.appendChild(fourthLi);
         ul.appendChild(li);
-
         todoList.appendChild(ul)
+
+        // Button Event 
         btnDelete.addEventListener('click', () => deleteRow(btnDelete.id));
+        btnUpdate.addEventListener('click', () => updateRow(btnUpdate.id))
     });
 }
 
 getStudent();
 
+// delete doc
 async function deleteRow(id) {
     try {
-        await deleteDoc(doc(db, "students", id));
-        console.log("Document Delete Successfully", id);
+        const studentDoc = doc(db, "students", id);
+        await deleteDoc(studentDoc);
+        alert("Document Delete Successfully", id);
         getStudent();
         todoList.innerHTML = ``;
 
@@ -118,3 +124,38 @@ async function deleteRow(id) {
         console.error("Error Delete Document", e);
     }
 }
+
+// update doc
+async function updateRow(id) {
+    try {
+        const studentName = document.getElementById('student-name').value;
+        const studentEmail = document.getElementById('student-email').value;
+        const studentNumber = document.getElementById('student-number').value;
+        const studentDoc = doc(db, "students", id);
+        if (studentName !== "" && studentEmail !== "" && studentNumber !== "") {
+            await updateDoc(studentDoc, {
+                name: studentName,
+                email: studentEmail,
+                number: studentNumber
+            });
+            console.log("Document Update Successfully", id);
+            getStudent();
+            emptyFields();
+            todoList.innerHTML = ``;
+        } else {
+            alert("Please Enter Name, Email, and Number");
+        }
+
+    } catch (e) {
+        console.error("Error Delete Document", e);
+    }
+}
+// end
+
+// empty fields
+function emptyFields() {
+    document.getElementById('student-name').value = '';
+    document.getElementById('student-email').value = '';
+    document.getElementById('student-number').value = '';
+}
+// end
